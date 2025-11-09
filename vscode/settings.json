@@ -1,0 +1,198 @@
+{
+    // ===== GlassIt Settings =====
+    "glassit.alpha": 255,
+
+    // ===== Workbench Settings =====
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.jar": "default"
+    },
+    "workbench.colorCustomizations": {
+        "inlineparameters.annotationBackground": "#282a3600",
+        "inlineparameters.annotationForeground": "#7b82af",
+        "scrollbar.shadow": "#24292e00"
+    },
+    "workbench.iconTheme": "charmed-icons",
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.editorLargeFileConfirmation": 10024,
+    "workbench.tree.indent": 16,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Vesper",
+
+    // ===== Window & Explorer =====
+    "window.newWindowProfile": "Default",
+    "explorer.confirmDelete": false,
+
+    // ===== Breadcrumbs Config =====
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolPath": "on",
+    "breadcrumbs.filePath": "on",
+
+    // ===== Editor Config / Settings =====
+    // "editor.fontFamily": "JetBrains Mono, JetBrainsMono Nerd Font, Hack Nerd Font Mono, Monospace",
+    "editor.fontFamily": "JetBrains Mono, Monospace",
+    "editor.fontSize": 16,
+    "editor.fontWeight": 400,
+    "editor.lineHeight": 1.2,
+    "editor.lineNumbers": "on",
+    "editor.folding": true,
+    "editor.glyphMargin": true,
+    "editor.guides.indentation": true,
+    "editor.scrollbar.horizontal": "auto",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.cursorStyle": "underline",
+    "editor.minimap.enabled": true,
+    "editor.wordWrap": "on",
+    "editor.stickyScroll.enabled": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.guides.highlightActiveIndentation": true,
+    "editor.guides.style": "dotted",
+    "editor.guides.bracketPairs": "active",
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+    },
+    // "editor.letterSpacing": 1.2
+
+    // ===== Diff Editor =====
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+
+    // ===== Terminal Config =====
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono, Hack Nerd Font, Monospace",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.stickyScroll.enabled": false,
+
+    // ===== Search =====
+    "search.searchView.keywordSuggestions": true,
+
+    // ===== File Associations =====
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.scss": "tailwindcss"
+    },
+
+    // ===== Settings Sync =====
+    "settingsSync.ignoredExtensions": [],
+
+    // ===== Remote Development =====
+    "remote.portsAttributes": {
+        "3000": {
+            "protocol": "https"
+        }
+    },
+
+    // ===== Git & GitLens =====
+    "git.autofetch": true,
+    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "gitlens.ai.gitkraken.model": "openai:gpt-5-nano",
+    "gitlens.ai.generateCommitMessage.customInstructions": "Give a conventional commit message with a short conventional title and bullet points per file; if a file has multiple changes, list them as indented dashes under the file.\\n Example:\\n feat(auth): add JWT support\\n - auth.js:\\n   - add token generation\\n   - verify middleware ",
+    "gitlens.views.commitDetails.files.layout": "tree",
+
+    // ===== GitHub Copilot & Chat =====
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.nextEditSuggestions.fixes": true,
+    "github.copilot.chat.reviewSelection.instructions": [],
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.chat.search.keywordSuggestions": true,
+    "github.copilot.chat.scopeSelection": true,
+    "github.copilot.chat.editor.temporalContext.enabled": true,
+    "github.copilot.chat.edits.temporalContext.enabled": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+    "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+    "github.copilot.chat.languageContext.typescript.enabled": true,
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "text": "Generate a conventional commit message in the following format:  <short summary title>  - [type](`file`): description   - (if multiple changes in the same file, list them as indented dashes)  Rules: - Use a **short summary title** (like \"Initial project scaffolding & developer tooling setup\") on the first line. - For each file, prefix with `- [+] type(\\`filename\\`): ...` - If a file has multiple changes, indent them with `-` under the file. - Keep descriptions concise and conventional. - End with `Branch: <branch-name>` if branch info is available."
+        }
+    ],
+
+    // ===== GitHub Pull Requests =====
+    "githubPullRequests.experimental.chat": true,
+    "githubPullRequests.experimental.useQuickChat": true,
+    "githubPullRequests.codingAgent.uiIntegration": true,
+    "githubPullRequests.fileListLayout": "tree",
+
+    // ===== Chat Agent & MCP =====
+    "chat.agent.maxRequests": 200,
+    "chat.todoListTool.enabled": true,
+    "chat.mcp.autostart": "newAndOutdated",
+    "chat.mcp.gallery.enabled": true,
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": true,
+        "windsurf": true,
+        "cursor-global": true,
+        "cursor-workspace": true
+    },
+
+    // ===== Inline Chat & Parameters =====
+    "inlineChat.lineEmptyHint": true,
+
+    // ===== SonarLint =====
+    "sonarlint.output.showVerboseLogs": true,
+    "sonarlint.automaticAnalysis": true,
+    "sonarlint.focusOnNewCode": false,
+    "sonarlint.rules": {
+        "css:S4662": {
+            "level": "on"
+        }
+    },
+
+    // ===== Red Hat =====
+    "redhat.telemetry.enabled": true,
+
+    // ===== Live Server =====
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+
+    // ===== Language Specific Settings =====
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[gradle]": {},
+    "[dart]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.rulers": [],
+        "editor.selectionHighlight": false,
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+
+    // ===== Dart & Flutter =====
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.flutterHotReloadOnSave": "all",
+    "dart.hotReloadOnSave": "all",
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "dart.mcpServer": true,
+
+    // ===== Experimental Features (Not used right now) =====
+    // "github.copilot.chat.experimental.codeActions": true,
+    // "github.copilot.chat.experimental.quickChat": true,
+    // "github.copilot.chat.experimental.inlineChat": true,
+    // "github.copilot.chat.welcomeMessage": true,
+    // "github.copilot.chat.localeOverride": "auto",
+    // "github.copilot.experimental.enableChatAgents": true,
+    // "github.copilot.experimental.enableChatParticipants": true,
+    // "workbench.experimental.enableNewProfilesUI": true
+}
