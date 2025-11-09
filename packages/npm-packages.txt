@@ -1,0 +1,5 @@
+/opt/homebrew/lib
+├── @anthropic-ai/claude-code@2.0.29
+├── @playwright/mcp@0.0.44
+└── npm-check@6.0.1
+

@@ -1,0 +1,58 @@
+# Increase timeout for version checks (default 500ms)
+command_timeout = 2000
+
+# Starship prompt configuration
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Add a blank line between prompts
+add_newline = true
+
+# Overall layout — simple but complete
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$php\
+$cmd_duration\
+$line_break\
+$character
+"""
+
+[directory]
+truncation_length = 0
+format = "[$path]($style) "
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+
+[nodejs]
+symbol = " "
+format = "via [$symbol($version )]($style) "
+
+[rust]
+symbol = " "
+format = "via [$symbol($version )]($style) "
+
+[golang]
+symbol = " "
+format = "via [$symbol($version )]($style) "
+
+[php]
+symbol = " "
+format = "via [$symbol($version )]($style) "
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style)\n"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold blue)"
