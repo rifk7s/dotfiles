@@ -1,0 +1,16 @@
+# System
+.DS_Store
+.Trash
+.CFUserTextEncoding
+
+# History & secrets
+.zsh_history
+.python_history
+.ssh
+.local
+.cache
+.gradle
+.npm
+.pub-cache
+.flutter
+.spicetify
