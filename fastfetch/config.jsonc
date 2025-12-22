@@ -24,6 +24,10 @@
   },
   "display": {
     "separator": " ",
+    "temp": {
+      "unit": "C",
+      "ndigits": 1,
+    },
   },
   "modules": [
     "break",
@@ -41,6 +45,7 @@
       "type": "cpu",
       "key": "│ ├ ",
       "keyColor": "red",
+      "temp": true,
     },
     {
       "type": "gpu",
