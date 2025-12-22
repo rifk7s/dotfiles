@@ -1,4 +1,7 @@
+export TERM=xterm-256color
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 #setopt CORRECT
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$HOME/.local/share/gem/ruby/2.6.0/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -6,6 +9,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export PATH="$PATH:/Users/rifky/develop/flutter/bin"
+export PATH="$PATH:$HOME/.pub-cache/bin"
 
 export PATH=$PATH:/Users/rifky/.spicetify
 
@@ -39,3 +43,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+
+#nvm - nodejs version manager

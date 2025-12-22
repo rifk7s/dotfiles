@@ -12,12 +12,12 @@
         "inlineparameters.annotationForeground": "#7b82af",
         "scrollbar.shadow": "#24292e00"
     },
-    "workbench.iconTheme": "charmed-icons",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.productIconTheme": "fluent-icons",
     "workbench.editorLargeFileConfirmation": 10024,
     "workbench.tree.indent": 16,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Vesper",
+    "workbench.colorTheme": "Moonlight II",
 
     // ===== Window & Explorer =====
     "window.newWindowProfile": "Default",
@@ -98,7 +98,6 @@
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
     "gitlens.ai.gitkraken.model": "openai:gpt-5-nano",
     "gitlens.ai.generateCommitMessage.customInstructions": "Give a conventional commit message with a short conventional title and bullet points per file; if a file has multiple changes, list them as indented dashes under the file.\\n Example:\\n feat(auth): add JWT support\\n - auth.js:\\n   - add token generation\\n   - verify middleware ",
-    "gitlens.views.commitDetails.files.layout": "tree",
 
     // ===== GitHub Copilot & Chat =====
     "github.copilot.enable": {
@@ -121,7 +120,7 @@
     "github.copilot.chat.languageContext.typescript.enabled": true,
     "github.copilot.chat.commitMessageGeneration.instructions": [
         {
-            "text": "Generate a conventional commit message in the following format:  <short summary title>  - [type](`file`): description   - (if multiple changes in the same file, list them as indented dashes)  Rules: - Use a **short summary title** (like \"Initial project scaffolding & developer tooling setup\") on the first line. - For each file, prefix with `- [+] type(\\`filename\\`): ...` - If a file has multiple changes, indent them with `-` under the file. - Keep descriptions concise and conventional. - End with `Branch: <branch-name>` if branch info is available."
+            "text": "Give a conventional commit message with a short conventional title and bullet points per file; if a file has multiple changes, list them as indented dashes under the file.\\n Example:\\n feat(auth): add JWT support\\n - auth.js:\\n   - add token generation\\n   - verify middleware ",
         }
     ],
 
@@ -149,7 +148,7 @@
     // ===== SonarLint =====
     "sonarlint.output.showVerboseLogs": true,
     "sonarlint.automaticAnalysis": true,
-    "sonarlint.focusOnNewCode": false,
+    "sonarlint.focusOnNewCode": true,
     "sonarlint.rules": {
         "css:S4662": {
             "level": "on"
@@ -185,14 +184,9 @@
     "dart.debugExternalPackageLibraries": false,
     "dart.debugSdkLibraries": false,
     "dart.mcpServer": true,
-
-    // ===== Experimental Features (Not used right now) =====
-    // "github.copilot.chat.experimental.codeActions": true,
-    // "github.copilot.chat.experimental.quickChat": true,
-    // "github.copilot.chat.experimental.inlineChat": true,
-    // "github.copilot.chat.welcomeMessage": true,
-    // "github.copilot.chat.localeOverride": "auto",
-    // "github.copilot.experimental.enableChatAgents": true,
-    // "github.copilot.experimental.enableChatParticipants": true,
-    // "workbench.experimental.enableNewProfilesUI": true
+    "chat.agentSessionsViewLocation": "single-view",
+    "accessibility.openChatEditedFiles": true,
+    "inlineChat.enableV2": true,
+    "scm.repositories.explorer": true,
+    "gitlens.views.commitDetails.files.layout": "tree"
 }
