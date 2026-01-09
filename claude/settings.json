@@ -1,0 +1,24 @@
+// I use custom models, not from claude subscriptions
+
+{
+  "apiKeyHelper": "UR OWN API KEY",
+  "env": {
+    "ANTHROPIC_BASE_URL": "YOUR_OWN_PROXY_URL",
+    "API_TIMEOUT_MS": "30000000",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5-thinking"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y @owloops/claude-powerline@latest --style=powerline --theme=rose-pine --charset=unicode"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "superpowers@superpowers-marketplace": true
+  },
+  "alwaysThinkingEnabled": true,
+  "model": "opus"
+}

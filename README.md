@@ -6,6 +6,7 @@
 [![Starship](https://img.shields.io/badge/Starship-Prompt-DD0B78?style=flat&logoColor=white&labelColor=DD0B78&color=6c757d)](https://starship.rs/)
 [![VS Code](https://img.shields.io/badge/VS_Code-Editor-007ACC?style=flat&logo=visualstudiocode&logoColor=white&labelColor=007ACC&color=6c757d)](https://code.visualstudio.com/)
 [![Homebrew](https://img.shields.io/badge/Homebrew-Package_Manager-FBB040?style=flat&logo=homebrew&logoColor=black&labelColor=FBB040&color=6c757d)](https://brew.sh/)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-AI_Assistant-D97706?style=flat&logo=anthropic&logoColor=white&labelColor=D97706&color=6c757d)](https://claude.ai/)
 
 <div align="center">
   <img src="images.png" alt="Ghostty Terminal Setup" />
@@ -15,8 +16,8 @@ My personal macOS configuration files and settings.
 
 ## Core Tools
 
-**Terminal & Shell:** Ghostty, Zsh, Starship Prompt  
-**Development:** VS Code, Micro
+**Terminal & Shell:** Ghostty, Zsh, Starship Prompt
+**Development:** VS Code, Claude Code
 
 ## System
 
@@ -68,10 +69,19 @@ My personal macOS configuration files and settings.
    ```bash
    cp -r btop ~/.config/btop
    cp -r fastfetch ~/.config/fastfetch
-   cp -r micro ~/.config/micro
    ```
 
-6. **Reload shell**
+6. **Copy Claude Code settings**
+   ```bash
+   mkdir -p ~/.claude
+   cp claude/settings.json ~/.claude/settings.json
+   cp claude/claude-powerline.json ~/.claude/claude-powerline.json
+   ```
+
+   > [!CAUTION]
+   > Before using, edit `~/.claude/settings.json` to add your own API key or remove the `apiKeyHelper` field.
+
+7. **Reload shell**
    ```bash
    source ~/.zshrc
    ```
@@ -108,6 +118,16 @@ My personal macOS configuration files and settings.
 - Fluent Icons
 - Custom keybindings
 - Enhanced editor settings
+
+### Claude Code
+- Custom API configuration
+- Powerline status line with rose-pine theme
+- Plugins: frontend-design, context7, code-simplifier, superpowers
+- Always thinking mode enabled
+- Model preferences configured
+
+> [!NOTE]
+> The `claude/settings.json` in this repo has sensitive fields redacted. You must configure your own API key after copying.
 
 ## Package Lists
 
