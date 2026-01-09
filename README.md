@@ -1,10 +1,10 @@
 # Dotfiles
 
 
-[![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-6366f1?style=flat&logoColor=white&labelColor=6366f1&color=6c757d)](https://ghostty.org/)
+[![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-6366f1?style=flat&logo=ghostty&logoColor=white&labelColor=6366f1&color=6c757d)](https://ghostty.org/)
 [![Zsh](https://img.shields.io/badge/Zsh-Shell-1A2C34?style=flat&logo=gnu-bash&logoColor=white&labelColor=1A2C34&color=6c757d)](https://www.zsh.org/)
-[![Starship](https://img.shields.io/badge/Starship-Prompt-DD0B78?style=flat&logoColor=white&labelColor=DD0B78&color=6c757d)](https://starship.rs/)
-[![VS Code](https://img.shields.io/badge/VS_Code-Editor-007ACC?style=flat&logo=visualstudiocode&logoColor=white&labelColor=007ACC&color=6c757d)](https://code.visualstudio.com/)
+[![Starship](https://img.shields.io/badge/Starship-Prompt-DD0B78?style=flat&logo=starship&logoColor=white&labelColor=DD0B78&color=6c757d)](https://starship.rs/)
+[![VS Code](https://img.shields.io/badge/VS_Code-Editor-007ACC?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yMy4xNSAyLjU4N0wxOC4yMS4yMWExLjQ5NCAxLjQ5NCAwIDAgMC0xLjcwNS4yOWwtOS40NiA4LjYzLTQuMTItMy4xMjhhLjk5OS45OTkgMCAwIDAtMS4yNzYuMDU3TC4zMjcgNy4yNjFBMSAxIDAgMCAwIC4zMjYgOC43NEwzLjg5OSAxMiAuMzI2IDE1LjI2YTEgMSAwIDAgMCAuMDAxIDEuNDc5TDEuNjUgMTcuOTRhLjk5OS45OTkgMCAwIDAgMS4yNzYuMDU3bDQuMTItMy4xMjggOS40NiA4LjYzYTEuNDkyIDEuNDkyIDAgMCAwIDEuNzA0LjI5bDQuOTQyLTIuMzc3QTEuNSAxLjUgMCAwIDAgMjQgMjAuMDZWMy45MzlhMS41IDEuNSAwIDAgMC0uODUtMS4zNTJ6bS01LjE0NiAxNC44NjFMMTAuODI2IDEybDcuMTc4LTUuNDQ4djEwLjg5NnoiLz48L3N2Zz4K&logoColor=white&labelColor=007ACC&color=6c757d)](https://code.visualstudio.com/)
 [![Homebrew](https://img.shields.io/badge/Homebrew-Package_Manager-FBB040?style=flat&logo=homebrew&logoColor=black&labelColor=FBB040&color=6c757d)](https://brew.sh/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-AI_Assistant-D97706?style=flat&logo=anthropic&logoColor=white&labelColor=D97706&color=6c757d)](https://claude.ai/)
 
