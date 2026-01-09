@@ -17,7 +17,7 @@
     "workbench.editorLargeFileConfirmation": 10024,
     "workbench.tree.indent": 16,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Moonlight II",
+    "workbench.colorTheme": "Moonlight",
 
     // ===== Window & Explorer =====
     "window.newWindowProfile": "Default",
@@ -60,7 +60,7 @@
 
     // ===== Diff Editor =====
     "diffEditor.experimental.showMoves": true,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
 
     // ===== Terminal Config =====
     "terminal.integrated.defaultProfile.windows": "Git Bash",
@@ -94,7 +94,7 @@
 
     // ===== Git & GitLens =====
     "git.autofetch": true,
-    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.model": "vscode",
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
     "gitlens.ai.gitkraken.model": "openai:gpt-5-nano",
     "gitlens.ai.generateCommitMessage.customInstructions": "Give a conventional commit message with a short conventional title and bullet points per file; if a file has multiple changes, list them as indented dashes under the file.\\n Example:\\n feat(auth): add JWT support\\n - auth.js:\\n   - add token generation\\n   - verify middleware ",
@@ -148,7 +148,6 @@
     // ===== SonarLint =====
     "sonarlint.output.showVerboseLogs": true,
     "sonarlint.automaticAnalysis": true,
-    "sonarlint.focusOnNewCode": true,
     "sonarlint.rules": {
         "css:S4662": {
             "level": "on"
@@ -188,5 +187,9 @@
     "accessibility.openChatEditedFiles": true,
     "inlineChat.enableV2": true,
     "scm.repositories.explorer": true,
-    "gitlens.views.commitDetails.files.layout": "tree"
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "sonarlint.focusOnNewCode": true,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.selectedModel": "default",
+    "claudeCode.useTerminal": true
 }

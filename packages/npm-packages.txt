@@ -1,5 +1,6 @@
-/opt/homebrew/lib
-├── @anthropic-ai/claude-code@2.0.29
+├── @github/copilot@0.0.361
 ├── @playwright/mcp@0.0.44
-└── npm-check@6.0.1
+├── firebase-tools@14.27.0
+├── npm-check@6.0.1
+└── npm@11.6.4
 

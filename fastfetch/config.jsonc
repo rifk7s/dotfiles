@@ -46,6 +46,7 @@
       "key": "│ ├ ",
       "keyColor": "red",
       "temp": true,
+      "format": "{name} ({cores-online}) @ {freq-max} ({temperature})",
     },
     {
       "type": "gpu",
