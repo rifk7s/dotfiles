@@ -1,5 +1,6 @@
 # Shift+Enter for Claude Code / Factory Droid (must be at top)
-keybind = shift+enter=text:\x1b\r
+# Try sending both ESC and newline for compatibility
+keybind = shift+enter=text:\x1b\n
 
 # Theme & Appearance
 theme = Catppuccin Mocha
@@ -49,7 +50,7 @@ background-blur-radius = 40
 # Shell Integration
 shell-integration = detect
 shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
-command = zsh --login -c "if command -v tmux >/dev/null 2>&1; then tmux attach || tmux; else zsh; fi"
+command = zsh --login
 
 # Working Directory
 working-directory = home
