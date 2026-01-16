@@ -1,17 +1,26 @@
-// I use custom models, not from claude subscriptions
-
 {
-  "apiKeyHelper": "UR OWN API KEY",
+  "cleanupPeriodDays": 14,
   "env": {
-    "ANTHROPIC_BASE_URL": "YOUR_OWN_PROXY_URL",
-    "API_TIMEOUT_MS": "30000000",
+    "ANTHROPIC_BASE_URL": "UR_OWN_PROXY_URL",
+    "ANTHROPIC_AUTH_TOKEN": "UR_OWN_AUTH_TOKEN",
+    "ANTHROPIC_MODEL": "claude-opus-4-5-thinking",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-5",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5-thinking"
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5-thinking",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5-thinking",
+    "BASH_MAX_TIMEOUT_MS": "60000",
+    "BASH_DEFAULT_TIMEOUT_MS": "30000",
+    "BASH_MAX_OUTPUT_LENGTH": "50000"
+  },
+  "permissions": {
+    "allow": [
+      "mcp__exa__web_search_exa",
+      "mcp__bash__run"
+    ],
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
-    "command": "npx -y @owloops/claude-powerline@latest --style=powerline --theme=rose-pine --charset=unicode"
+    "command": "npx -y @owloops/claude-powerline@latest"
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,

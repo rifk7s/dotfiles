@@ -31,6 +31,6 @@ Use this structure:
 2. Run `git diff --cached --name-only` to list affected files
 3. Analyze the changes and determine the appropriate type and scope
 4. Generate the commit message following the format above
-5. Commit with the generated message using `git commit -m`
+5. Present the message to the user for review
 
-Automatically commit after generating the message. Do not ask for confirmation.
+Do NOT commit automatically. Only generate and display the message.
