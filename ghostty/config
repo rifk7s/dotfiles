@@ -9,7 +9,7 @@ theme = Catppuccin Mocha
 
 # window-theme = system
 window-colorspace = "display-p3"
-macos-icon = blueprint
+macos-icon = official
 macos-titlebar-style = "tabs"
 
 
@@ -34,12 +34,13 @@ window-new-tab-position = "end"
 window-padding-x = 4,2
 window-padding-y = 6,0
 window-padding-balance = true
-# adjust-cell-height = 25%
+adjust-cell-height = 10%
 
 macos-window-shadow = false
 
 
-# Backgrund & Transparency
+# Backgrund & 
+background-image-fit="cover"
 background-opacity = 0.75
 background-blur = true
 background-blur-radius = 40
@@ -61,7 +62,7 @@ window-inherit-working-directory = true
 # Mouse Settings
 focus-follows-mouse = true
 mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
+mouse-scroll-multiplier = 1.5
 
 
 # Clipboard Settings
@@ -145,8 +146,8 @@ keybind = super+i=inspector:toggle
 keybind = super+r=reload_config
 
 # Tab Navigation
-keybind = super+left=previous_tab
-keybind = super+right=next_tab
+# keybind = super+left=previous_tab
+# keybind = super+right=next_tab
 
 # Split Management
 keybind = super+ctrl+0=equalize_splits
