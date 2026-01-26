@@ -3,14 +3,16 @@
 keybind = shift+enter=text:\x1b\n
 
 # Theme & Appearance
-theme = Catppuccin Mocha
+# theme = Catppuccin Mocha
 # theme = Vesper
+# theme = Oxocarbon
+theme = Catppuccin Macchiato
 # theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 
 # window-theme = system
 window-colorspace = "display-p3"
 macos-icon = official
-macos-titlebar-style = "tabs"
+macos-titlebar-style = "transparent"
 
 
 # Font Settings
