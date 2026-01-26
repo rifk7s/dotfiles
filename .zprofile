@@ -1,8 +1,8 @@
-
-
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Setting PATH for Python 3.14
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.14/bin:${PATH}"
-export PATH
+# Python 3.14 - using Homebrew version
+export PATH="/opt/homebrew/opt/python@3.14/bin:${PATH}"
+
+# Flutter
+export PATH="$HOME/develop/flutter/bin:$PATH"
