@@ -1,54 +1,58 @@
-# Shift+Enter for Claude Code / Factory Droid (must be at top)
-# Try sending both ESC and newline for compatibility
-keybind = shift+enter=text:\x1b\n
+# --- Ghostty Configuration ---
 
 # Theme & Appearance
-# theme = Catppuccin Mocha
+# theme = Catppuccin Macchiato
 # theme = Vesper
-# theme = Oxocarbon
-theme = Catppuccin Macchiato
-# theme = dark:Catppuccin Mocha,light:Catppuccin Latte
-
-# window-theme = system
+theme = Catppuccin Mocha
 window-colorspace = "display-p3"
 macos-icon = official
+# window-theme = system
+
+# Window
 macos-titlebar-style = "transparent"
+macos-window-shadow = false
+window-decoration = true
+window-save-state = always
+window-new-tab-position = "end"
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+resize-overlay = never
 
+# Background
+# unfocused-split-fill = "#444444"
+background-opacity = 0.88
+background-image-fit = "cover"
+unfocused-split-opacity = 0.67
+# background-blur = true
+# background-blur-radius = 40
+# blur disabled: causes grey overlay in window screenshots (Cmd+Shift+5 -> Capture Selected Window)
 
-# Font Settings
+# Font
 font-family = "JetBrainsMono Nerd Font"
 font-size = 16
 font-thicken = true
-bold-is-bright = false
+# bold-is-bright = false (deprecated)
+adjust-cell-height = 10%
 # window-title-font-family = Hack Nerd Font Propo
 
-
-# Cursor Settings
+# Cursor
 cursor-style = "block"
 cursor-style-blink = true
 cursor-invert-fg-bg = true
 
+# Mouse & Interaction
+# focus-follows-mouse = true (disabled: annoying accidental focus changes)
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+confirm-close-surface = false
+link-url = true
 
-# Window Settings
-window-decoration = true
-window-save-state = always
-window-new-tab-position = "end"
-window-padding-x = 4,2
-window-padding-y = 6,0
-window-padding-balance = true
-adjust-cell-height = 10%
-
-macos-window-shadow = false
-
-
-# Backgrund & 
-background-image-fit="cover"
-background-opacity = 0.75
-background-blur = true
-background-blur-radius = 40
-# unfocused-split-opacity = 0.4
-# unfocused-split-fill = "#444444"
-
+# Clipboard
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+copy-on-select = clipboard
 
 # Shell Integration
 shell-integration = detect
@@ -60,42 +64,19 @@ working-directory = home
 # working-directory = inherit
 window-inherit-working-directory = true
 
-
-# Mouse Settings
-focus-follows-mouse = true
-mouse-hide-while-typing = true
-mouse-scroll-multiplier = 1.5
-
-
-# Clipboard Settings
-clipboard-read = allow
-clipboard-write = allow
-clipboard-trim-trailing-spaces = true
-copy-on-select = clipboard
-
-
-# Links
-link-url = true
-
-
 # macOS Specific
 macos-option-as-alt = true
 
-
 # Quick Terminal
 quick-terminal-animation-duration = 0.08
-confirm-close-surface = false
-
 
 # Auto Update
 auto-update = download
 auto-update-channel = stable
 
-
 # Custom Shaders
 # Some shaders can be found in this repo
 # https://github.com/hackrmomo/ghostty-shaders
-
 # custom-shader = shaders/animated-gradient-shader.glsl
 # custom-shader = shaders/tft.glsl
 # custom-shader = shaders/bettercrt.glsl
@@ -135,10 +116,14 @@ auto-update-channel = stable
 # custom-shader = shaders/cursor_blaze.glsl
 custom-shader = shaders/cursor_blaze_no_trail.glsl
 # custom-shader = shaders/cursor_smear.glsl
-custom-shader = shaders/cursor_smear_fade.glsl
+custom-shader = shaders/cursor_smear_fade.glsl  
 
+# --- Keybindings ---
 
-# Keybindings
+# Custom Text Inputs
+# Shift+Enter for Claude Code / Factory Droid
+# Try sending both ESC and newline for compatibility
+keybind = shift+enter=text:\x1b\n
 
 # Quick Terminal
 keybind = cmd+s=toggle_quick_terminal
