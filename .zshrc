@@ -9,21 +9,20 @@ export PATH="$PATH:$ANDROID_HOME/emulator"
 # Ruby gems
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$HOME/.local/share/gem/ruby/2.6.0/bin:$PATH"
 
-# Composer (now using Herd's Composer)
-#export PATH="$PATH:$HOME/.composer/vendor/bin" 
+# Composer (using Herd's Composer)
+#export PATH="$PATH:$HOME/.composer/vendor/bin"
 
-
-# Node.js - now using Herd's nvm (v22.22.0)
+# Node.js - using Herd's nvm (v22.22.0)
 # export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
 # OpenJDK 21
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
-# Flutter (now in .zprofile)
+# Flutter (in .zprofile)
 # export PATH="$PATH:/Users/rifky/develop/flutter/bin"
 # export PATH="$PATH:$HOME/.pub-cache/bin"
 
-# Spicetify (commented out - not installed yet)
+# Spicetify (commented out - not installed)
 #export PATH=$PATH:/Users/rifky/.spicetify
 
 # uv - local bin
@@ -62,7 +61,7 @@ function y() {
 
 #nvm - nodejs version manager
 
-# Laravel Herd App (automatically set after installing Herd)
+
 
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/rifky/Library/Application Support/Herd/config/php/84/"

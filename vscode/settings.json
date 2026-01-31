@@ -17,7 +17,7 @@
     "workbench.editorLargeFileConfirmation": 10024,
     "workbench.tree.indent": 16,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Moonlight",
+    "workbench.colorTheme": "Vesper",
 
     // ===== Window & Explorer =====
     "window.newWindowProfile": "Default",
@@ -65,7 +65,7 @@
     // ===== Terminal Config =====
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono, Hack Nerd Font, Monospace",
+    "terminal.integrated.fontFamily": "Firacode Nerd Font, Hack Nerd Font Mono, Hack Nerd Font, Monospace",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.cursorBlinking": true,
@@ -150,7 +150,7 @@
     "sonarlint.automaticAnalysis": true,
     "sonarlint.rules": {
         "css:S4662": {
-            "level": "on"
+            "level": "off"
         }
     },
 
@@ -188,8 +188,17 @@
     "inlineChat.enableV2": true,
     "scm.repositories.explorer": true,
     "gitlens.views.commitDetails.files.layout": "tree",
-    "sonarlint.focusOnNewCode": true,
     "claudeCode.preferredLocation": "panel",
-    "claudeCode.selectedModel": "default",
-    "claudeCode.useTerminal": true
+    "claudeCode.selectedModel": "gemini-claude-sonnet-4-5-thinking",
+    "claudeCode.environmentVariables": [
+
+    ],
+    "terminal.integrated.enableVisualBell": true,
+    "gitlens.graph.minimap.additionalTypes": [
+        "localBranches",
+        "stashes",
+        "pullRequests",
+        "remoteBranches"
+    ],
+    "sonarlint.focusOnNewCode": false
 }
