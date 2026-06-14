@@ -1,0 +1,4 @@
+# Bun Global Packages
+# Export: cat ~/.bun/install/global/package.json
+# Install: bun add -g <package>
+eas-cli@^20.1.0

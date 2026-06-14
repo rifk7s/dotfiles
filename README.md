@@ -18,12 +18,16 @@ My personal macOS configuration files and settings.
 
 **Terminal & Shell:** Ghostty, Zsh, Starship Prompt
 **Development:** VS Code, Claude Code
+**Runtime:** Bun (primary), Node.js via Herd NVM
 
 ## System
 
 **Monitoring:** btop, fastfetch  
-**Package Manager:** Homebrew
+**Package Manager:** Homebrew, Bun
 
+## Clean Install Guide
+
+If you are performing a clean macOS install, refer to the [Clean Install Reference](INSTALL.md) for a complete list of CLI tools, runtimes (like Laravel Herd), and applications to reinstall.
 
 ## Quick Start
 
@@ -145,7 +149,8 @@ My personal macOS configuration files and settings.
 The `packages/` directory contains lists of installed packages:
 - **brew-packages.txt** - Homebrew formulae
 - **brew-casks.txt** - Homebrew casks (apps)
-- **npm-packages.txt** - npm global packages
+- **bun-packages.txt** - Bun global packages (primary runtime)
+- **npm-packages.txt** - npm global packages (minimal, via Herd NVM)
 
 To export your current packages:
 
@@ -154,7 +159,10 @@ To export your current packages:
 brew leaves > packages/brew-packages.txt
 brew list --cask > packages/brew-casks.txt
 
-# Export npm packages
+# Export Bun global packages
+cat ~/.bun/install/global/package.json
+
+# Export npm packages (minimal)
 npm list -g --depth=0 > packages/npm-packages.txt
 ```
 
