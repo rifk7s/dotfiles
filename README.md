@@ -78,10 +78,13 @@ My personal macOS configuration files and settings.
    cp claude/claude-powerline.json ~/.claude/claude-powerline.json
    ```
 
-   > [!CAUTION]
-   > Before using, edit `~/.claude/settings.json` to add your own API key or remove the `apiKeyHelper` field.
+7. **Restore Claude Code memory (optional)**
+   ```bash
+   mkdir -p ~/.claude/projects/-Users-rifky-Desktop-alp-dueday/memory
+   cp -r claude/memory/* ~/.claude/projects/-Users-rifky-Desktop-alp-dueday/memory/
+   ```
 
-7. **Reload shell**
+8. **Reload shell**
    ```bash
    source ~/.zshrc
    ```
@@ -105,7 +108,11 @@ My personal macOS configuration files and settings.
 - Homebrew integration
 - Python 3.14 PATH setup
 - uv (Python package installer) PATH
-- Custom aliases and functions
+- Bun runtime setup
+- MySQL client + DBngin helper (`mysqls` function)
+- Laravel Herd (PHP, Composer, NVM)
+- Custom aliases (`eza`, `lstr`, `gitlog1/2`, `fzf`)
+- Antigravity, OpenCode, LM Studio PATH
 
 ### Starship Prompt
 - Modern, fast, and customizable prompt
@@ -120,14 +127,15 @@ My personal macOS configuration files and settings.
 - Enhanced editor settings
 
 ### Claude Code
-- Custom API configuration
 - Powerline status line with rose-pine theme
-- Plugins: frontend-design, context7, code-simplifier, superpowers
-- Always thinking mode enabled
-- Model preferences configured
+- Plugins: frontend-design, context7, andrej-karpathy-skills, figma
+- Pre-tool-use hooks (rtk)
+- Worktree with `fresh` base ref
+- Auto-compact enabled
+- Memory backup (11 feedback files for project preferences)
 
 > [!NOTE]
-> The `claude/settings.json` in this repo has sensitive fields redacted. You must configure your own API key after copying.
+> Claude Code settings use native auth (no API keys in config). Memory files in `claude/memory/` are project-specific backups that can be restored after a clean install.
 
 ## Package Lists
 
@@ -136,7 +144,7 @@ My personal macOS configuration files and settings.
 
 The `packages/` directory contains lists of installed packages:
 - **brew-packages.txt** - Homebrew formulae
-- **brew-cask.txt** - Homebrew casks (apps)
+- **brew-casks.txt** - Homebrew casks (apps)
 - **npm-packages.txt** - npm global packages
 
 To export your current packages:
@@ -144,7 +152,7 @@ To export your current packages:
 ```bash
 # Export Homebrew packages
 brew leaves > packages/brew-packages.txt
-brew list --cask > packages/brew-cask.txt
+brew list --cask > packages/brew-casks.txt
 
 # Export npm packages
 npm list -g --depth=0 > packages/npm-packages.txt

@@ -1,6 +1,4 @@
-├── @github/copilot@0.0.361
-├── @playwright/mcp@0.0.44
-├── firebase-tools@14.27.0
-├── npm-check@6.0.1
-└── npm@11.6.4
+/Users/rifky/Library/Application Support/Herd/config/nvm/versions/node/v22.22.2/lib
+├── corepack@0.34.6
+└── npm@10.9.7
 

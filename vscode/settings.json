@@ -8,6 +8,7 @@
         "*.jar": "default"
     },
     "workbench.colorCustomizations": {
+        "editorBracketMatch.foreground": "#ff0000",
         "inlineparameters.annotationBackground": "#282a3600",
         "inlineparameters.annotationForeground": "#7b82af",
         "scrollbar.shadow": "#24292e00"
@@ -16,8 +17,7 @@
     "workbench.productIconTheme": "fluent-icons",
     "workbench.editorLargeFileConfirmation": 10024,
     "workbench.tree.indent": 16,
-    "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Vesper",
+    "workbench.startupEditor": "agentSessionsWelcomePage",
 
     // ===== Window & Explorer =====
     "window.newWindowProfile": "Default",
@@ -64,7 +64,7 @@
 
     // ===== Terminal Config =====
     "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.osx": "bash",
     "terminal.integrated.fontFamily": "Firacode Nerd Font, Hack Nerd Font Mono, Hack Nerd Font, Monospace",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.cursorStyle": "underline",
@@ -94,10 +94,10 @@
 
     // ===== Git & GitLens =====
     "git.autofetch": true,
-    "gitlens.ai.model": "vscode",
+    "gitlens.ai.model": "gitkraken",
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-    "gitlens.ai.gitkraken.model": "openai:gpt-5-nano",
-    "gitlens.ai.generateCommitMessage.customInstructions": "Give a conventional commit message with a short conventional title and bullet points per file; if a file has multiple changes, list them as indented dashes under the file.\\n Example:\\n feat(auth): add JWT support\\n - auth.js:\\n   - add token generation\\n   - verify middleware ",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+    "gitlens.ai.generateCommitMessage.customInstructions": "Generate a conventional commit message. Format: <type>(<scope>): <short_summary>  Then a blank line, then bullet lines like this:  - [+] <Action verb> <feature/change> in `<file_or_module>` <context/details>  Rules: 1) Every change line must start with: \"- [+] \" 2) Use only \"+\" (no *, no -, no mixed types) 3) One line per logical change 4) Include the exact file/module/function in backticks 5) Use professional action verbs (Add, Implement, Improve, Refactor, Update, Fix) 6) No extra text — only the commit message content",
 
     // ===== GitHub Copilot & Chat =====
     "github.copilot.enable": {
@@ -147,7 +147,7 @@
 
     // ===== SonarLint =====
     "sonarlint.output.showVerboseLogs": true,
-    "sonarlint.automaticAnalysis": true,
+    "sonarlint.automaticAnalysis": false,
     "sonarlint.rules": {
         "css:S4662": {
             "level": "off"
@@ -189,7 +189,7 @@
     "scm.repositories.explorer": true,
     "gitlens.views.commitDetails.files.layout": "tree",
     "claudeCode.preferredLocation": "panel",
-    "claudeCode.selectedModel": "gemini-claude-sonnet-4-5-thinking",
+    "claudeCode.selectedModel": "opus",
     "claudeCode.environmentVariables": [
 
     ],
@@ -200,5 +200,96 @@
         "pullRequests",
         "remoteBranches"
     ],
-    "sonarlint.focusOnNewCode": false
+    "sonarlint.focusOnNewCode": false,
+    "github.copilot.chat.copilotMemory.enabled": true,
+    "simpleBrowser.useIntegratedBrowser": true,
+    "workbench.settings.alwaysShowAdvancedSettings": true,
+    "chat.customAgentInSubagent.enabled": true,
+    "github.copilot.chat.searchSubagent.enabled": true,
+    "github.copilot.chat.agentCustomizationSkill.enabled": true,
+    "terminal.integrated.enableKittyKeyboardProtocol": true,
+    "json.schemaDownload.trustedDomains": {
+        "https://schemastore.azurewebsites.net/": true,
+        "https://raw.githubusercontent.com/": true,
+        "https://www.schemastore.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://json-schema.org/": true,
+        "https://ui.shadcn.com": true
+    },
+    "chat.tools.terminal.terminalProfile.osx": {
+        "path": "bash"
+    },
+    "gitlens.rebaseEditor.ordering": "asc",
+    "inlineChat.affordance": "editor",
+    "accessibility.chat.showCheckmarks": true,
+    "terminal.integrated.enableImages": true,
+    "terminal.external.osxExec": "Ghostty.app",
+    "workbench.browser.enableChatTools": true,
+    "sonarlint.analysisExcludesStandalone": "",
+    "workbench.browser.showInTitleBar": true,
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        },
+        "fish": {
+            "path": "fish",
+            "args": [
+                "-l"
+            ]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "github.copilot.chat.agentDebugLog.enabled": true,
+    "github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
+    "chat.tools.terminal.backgroundNotifications": true,
+    "chat.tools.confirmationCarousel.enabled": true,
+    "jsts-chat-features.skills.enabled": true,
+    "inlineChat.fixDiagnostics": false,
+    "chat.experimental.incrementalRendering.enabled": true,
+    "github.copilot.chat.skillTool.enabled": true,
+    "github.copilot.chat.responsesApi.toolSearchTool.enabled": true,
+    "terminal.integrated.initialHint": false,
+    "fallow.issueTypes": {
+        "unused-files": true,
+        "unused-exports": true,
+        "unused-types": true,
+        "private-type-leaks": true,
+        "unused-dependencies": true,
+        "unused-dev-dependencies": true,
+        "unused-optional-dependencies": true,
+        "unused-enum-members": true,
+        "unused-class-members": true,
+        "unresolved-imports": true,
+        "unlisted-dependencies": true,
+        "duplicate-exports": true,
+        "type-only-dependencies": true,
+        "test-only-dependencies": true,
+        "circular-dependencies": true,
+        "re-export-cycles": true,
+        "boundary-violation": true,
+        "stale-suppressions": true,
+        "unused-catalog-entries": true,
+        "unresolved-catalog-references": true,
+        "unused-dependency-overrides": true,
+        "misconfigured-dependency-overrides": true
+    },
+    "chat.viewSessions.orientation": "stacked",
 }
+

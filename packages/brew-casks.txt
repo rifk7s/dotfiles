@@ -1,2 +1,6 @@
 font-fira-code-nerd-font
 font-jetbrains-mono-nerd-font
+keycastr
+markedit
+ngrok
+rectangle
