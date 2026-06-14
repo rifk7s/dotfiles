@@ -1,23 +1,50 @@
 {
-  "env": {
-    "ANTHROPIC_AUTH_TOKEN": "skibidi-67mango",
-    "ANTHROPIC_BASE_URL": "ABCDNAFSOAOFSKQOFKOQFKQOFKW",
-    "API_TIMEOUT_MS": "3000000",
-    "ANTHROPIC_MODEL": "gemini-claude-opus-4-5-thinking",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gemini-claude-sonnet-4-5-thinking",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "gemini-claude-sonnet-4-5-thinking",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "gemini-claude-sonnet-4-5-thinking",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  "permissions": {
+    "allow": [
+      "mcp__github__pull_request_read",
+      "Bash(rtk grep *)",
+      "mcp__exa__web_search_exa",
+      "mcp__github__get_file_contents"
+    ],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "baseRef": "fresh"
   },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "glm-plan-usage@zai-coding-plugins": true,
     "frontend-design@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "figma@claude-plugins-official": true
   },
-  "model": "gemini-claude-opus-4-5-thinking"
+  "extraKnownMarketplaces": {
+    "karpathy-skills": {
+      "source": {
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "editorMode": "normal",
+  "autoCompactEnabled": true,
+  "agentPushNotifEnabled": false,
+  "model": "opus"
 }

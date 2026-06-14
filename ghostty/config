@@ -1,45 +1,62 @@
 # --- Ghostty Configuration ---
 
+# scrollback-limit = 100000000
+scrollback-limit = 100000
+
 # Theme & Appearance
-# theme = Catppuccin Macchiato
+# theme = "/Users/rifky/.config/ghostty/themes/ghostty-themez"
+theme = Catppuccin Macchiato
 # theme = Vesper
-theme = Catppuccin Mocha
+
+# theme = Catppuccin Mocha
+
+
+# config-file = themes/tokyonight
+# config-file = themes/linkarzu
+term = xterm-256color
 window-colorspace = "display-p3"
 macos-icon = official
 # window-theme = system
 
 # Window
-macos-titlebar-style = "transparent"
-macos-window-shadow = false
 window-decoration = true
+macos-titlebar-style = "transparent"
+macos-titlebar-proxy-icon = "visible"
+macos-window-shadow = false
+
 window-save-state = always
 window-new-tab-position = "end"
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 4,2
+window-padding-y = 6,0   
 window-padding-balance = true
 resize-overlay = never
 
 # Background
 # unfocused-split-fill = "#444444"
-background-opacity = 0.88
+background-opacity = 0.78
 background-image-fit = "cover"
-unfocused-split-opacity = 0.67
+split-divider-color = #524f67
+unfocused-split-opacity = 0.7
 # background-blur = true
-# background-blur-radius = 40
+# background-blur = macos-glass-clear
+# background-blur-radius = 10
 # blur disabled: causes grey overlay in window screenshots (Cmd+Shift+5 -> Capture Selected Window)
 
 # Font
-font-family = "JetBrainsMono Nerd Font"
+font-family = "JetBrainsMonoNL Nerd Font"
 font-size = 16
+font-feature = -liga,-calt,-dlig
 font-thicken = true
 # bold-is-bright = false (deprecated)
-adjust-cell-height = 10%
+adjust-cell-height = 30%
 # window-title-font-family = Hack Nerd Font Propo
 
 # Cursor
 cursor-style = "block"
-cursor-style-blink = true
+cursor-style-blink = false
 cursor-invert-fg-bg = true
+cursor-color = cell-foreground
+cursor-text = cell-background
 
 # Mouse & Interaction
 # focus-follows-mouse = true (disabled: annoying accidental focus changes)
@@ -57,12 +74,15 @@ copy-on-select = clipboard
 # Shell Integration
 shell-integration = detect
 shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+# shell-integration-features = no-cursor
 command = zsh --login
 
 # Working Directory
 working-directory = home
 # working-directory = inherit
-window-inherit-working-directory = true
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
 
 # macOS Specific
 macos-option-as-alt = true
@@ -71,7 +91,7 @@ macos-option-as-alt = true
 quick-terminal-animation-duration = 0.08
 
 # Auto Update
-auto-update = download
+auto-update = check
 auto-update-channel = stable
 
 # Custom Shaders
@@ -80,12 +100,13 @@ auto-update-channel = stable
 # custom-shader = shaders/animated-gradient-shader.glsl
 # custom-shader = shaders/tft.glsl
 # custom-shader = shaders/bettercrt.glsl
+# custom-shader = shaders/retro-terminal.glsl
 # custom-shader = shaders/bloom.glsl
 # custom-shader = shaders/bloom1.glsl
 # custom-shader = shaders/bloom075.glsl
 # custom-shader = shaders/bloom060.glsl
 # custom-shader = shaders/bloom050.glsl
-# custom-shader = shaders/bloom025.glsl
+custom-shader = shaders/bloom025.glsl
 # custom-shader = shaders/bloom050.glsl
 # custom-shader = shaders/bloom060.glsl
 # custom-shader = shaders/bloom075.glsl
@@ -104,7 +125,6 @@ auto-update-channel = stable
 # custom-shader = shaders/just-snow.glsl
 # custom-shader = shaders/matrix-hallway.glsl
 # custom-shader = shaders/negative.glsl
-# custom-shader = shaders/retro-terminal.glsl
 # custom-shader = shaders/smoke-and-ghost.glsl
 # custom-shader = shaders/sparks-from-fire.glsl
 # custom-shader = shaders/spotlight.glsl
@@ -117,6 +137,7 @@ auto-update-channel = stable
 custom-shader = shaders/cursor_blaze_no_trail.glsl
 # custom-shader = shaders/cursor_smear.glsl
 custom-shader = shaders/cursor_smear_fade.glsl  
+# custom-shader = shaders/space.glsl
 
 # --- Keybindings ---
 
@@ -149,3 +170,14 @@ keybind = super+b>left=goto_split:left
 keybind = super+b>down=goto_split:bottom
 keybind = super+b>up=goto_split:top
 keybind = super+b>right=goto_split:right
+
+# Similar to Tmux Panes (no sessions)
+# this only works if you have `macos-titlebar-style = tabs or native or transparent` else it behaves like new window
+keybind = ctrl+space>c=new_tab
+keybind = ctrl+space>n=new_window
+keybind = ctrl+space>x=close_surface
+
+
+notify-on-command-finish = always
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 30s
