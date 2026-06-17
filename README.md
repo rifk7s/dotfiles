@@ -53,54 +53,8 @@ If you are performing a clean macOS install, refer to the [Clean Install Referen
    ```
    *The script will automatically configure macOS defaults, install Homebrew, deploy the `Brewfile`, and audit your manual apps.*
 
-### Manual Setup (Config Files)
-
-1. **Copy shell configurations**
-   ```bash
-   cp .zshrc ~/.zshrc
-   cp .zprofile ~/.zprofile
-   cp .zshenv ~/.zshenv
-   cp starship.toml ~/.config/starship.toml
-   ```
-
-2. **Copy Ghostty configuration**
-   ```bash
-   mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
-   cp ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
-   ```
-
-3. **Copy VS Code settings**
-   ```bash
-   cp vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-   cp vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-   ```
-
-4. **Copy other tool configs**
-   ```bash
-   cp -r btop ~/.config/btop
-   cp -r fastfetch ~/.config/fastfetch
-   ```
-
-5. **Copy Claude Code settings**
-   ```bash
-   mkdir -p ~/.claude
-   cp claude/settings.json ~/.claude/settings.json
-   cp claude/claude-powerline.json ~/.claude/claude-powerline.json
-   ```
-
-6. **Restore Claude Code memory (optional)**
-   ```bash
-   mkdir -p ~/.claude/projects/-Users-rifky-Desktop-alp-dueday/memory
-   cp -r claude/memory/* ~/.claude/projects/-Users-rifky-Desktop-alp-dueday/memory/
-   ```
-
-7. **Reload shell**
-   ```bash
-   source ~/.zshrc
-   ```
-
-> [!TIP]
-> After copying configs, restart your terminal or reload the shell for changes to take effect.
+> [!NOTE]
+> If you prefer not to use the automated script or only want to cherry-pick specific configurations, refer to the [Manual Setup Guide](MANUAL.md).
 
 ## Features
 
