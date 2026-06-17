@@ -53,6 +53,20 @@ If you are performing a clean macOS install, refer to the [Clean Install Referen
    ```
    *The script will automatically configure macOS defaults, install Homebrew, deploy the `Brewfile`, and audit your manual apps.*
 
+#### Script Options
+You can run `install.sh` with the following flags to customize the execution:
+- `-d` or `--dry-run`: Simulates the installation process and prints out the commands that *would* be executed, without actually modifying your system. This is perfect for testing. (Note: skips `sudo` prompt).
+- `-v` or `--verbose`: Executes the script while printing exactly what commands are being run in the background. Helpful for debugging or if you just like seeing the logs.
+
+Example:
+```bash
+# Run a simulation to see what changes will happen
+./install.sh --dry-run
+
+# Run the full installation with verbose output
+./install.sh -v
+```
+
 > [!NOTE]
 > If you prefer not to use the automated script or only want to cherry-pick specific configurations, refer to the [Manual Setup Guide](MANUAL.md).
 
