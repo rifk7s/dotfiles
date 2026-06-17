@@ -8,12 +8,24 @@
 #
 # Usage (on a fresh Mac):
 # 1. xcode-select --install
-# 2. git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+# 2. git clone https://github.com/rifk7s/dotfiles.git ~/.dotfiles
 # 3. cd ~/.dotfiles && ./install.sh
 # -----------------------------------------------------------------------------
 
 set -euo pipefail
 IFS=$'\n\t'
+
+export DRY_RUN=false
+export VERBOSE=false
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -d|--dry-run) DRY_RUN=true ;;
+        -v|--verbose) VERBOSE=true ;;
+        *) echo "Unknown parameter passed: $1" ;;
+    esac
+    shift
+done
 
 # Determine absolute path to dotfiles directory
 export DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -47,8 +59,24 @@ log_error() {
 }
 export -f log_error
 
+execute() {
+    if [[ "$DRY_RUN" == true ]]; then
+        printf "%s[DRY-RUN]%s Would execute: %s\n" "${YELLOW}" "${RESET}" "$*" >&2
+    else
+        if [[ "$VERBOSE" == true ]]; then
+            printf "%s[EXEC]%s %s\n" "${BLUE}" "${RESET}" "$*" >&2
+        fi
+        "$@"
+    fi
+}
+export -f execute
+
 # --- Pre-flight Checks ---
 check_sudo() {
+    if [[ "$DRY_RUN" == true ]]; then
+        log_info "Skipping administrative privileges check (Dry Run)..."
+        return
+    fi
     log_info "Requesting administrative privileges..."
     sudo -v
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -122,4 +150,6 @@ main() {
     echo ""
 }
 
-main "$@"
+# The main call already passes "$@" from the top but we shifted them. 
+# We don't need to pass "$@" to main if we already processed them, but let's just call main.
+main

@@ -24,7 +24,7 @@ smart_symlink() {
     fi
 
     # Ensure parent directory of target exists
-    mkdir -p "$(dirname "$target_file")"
+    execute mkdir -p "$(dirname "$target_file")"
 
     if [[ -L "$target_file" ]]; then
         if [[ "$(readlink "$target_file")" == "$source_file" ]]; then
@@ -32,14 +32,14 @@ smart_symlink() {
             return
         else
             printf "  %s[WARN]%s %-15s : Symlink points elsewhere. Overwriting...\n" "${YELLOW}" "${RESET}" "${friendly_name}"
-            rm -f "$target_file"
+            execute rm -f "$target_file"
         fi
     elif [[ -e "$target_file" ]]; then
         printf "  %s[BACKUP]%s %-13s : Real file found. Backing up to .bak...\n" "${BLUE}" "${RESET}" "${friendly_name}"
-        mv "$target_file" "${target_file}.bak"
+        execute mv "$target_file" "${target_file}.bak"
     fi
 
-    ln -snf "$source_file" "$target_file"
+    execute ln -snf "$source_file" "$target_file"
     printf "  %s[LINKED]%s %-13s : Successfully symlinked!\n" "${GREEN}" "${RESET}" "${friendly_name}"
 }
 
