@@ -4,9 +4,9 @@ IFS=$'\n\t'
 
 log_info "Deploying Configuration Symlinks..."
 echo ""
-printf "%s%s======================================================================%s\n" "${YELLOW}" "${BOLD}" "${RESET}"
-printf "%s%s                 SMART SYMLINK MANAGER                                %s\n" "${YELLOW}" "${BOLD}" "${RESET}"
-printf "%s%s======================================================================%s\n" "${YELLOW}" "${BOLD}" "${RESET}"
+printf "%s%s======================================================================%s\n" "${FMT_YELLOW}" "${FMT_BOLD}" "${FMT_RESET}"
+printf "%s%s                 SMART SYMLINK MANAGER                                %s\n" "${FMT_YELLOW}" "${FMT_BOLD}" "${FMT_RESET}"
+printf "%s%s======================================================================%s\n" "${FMT_YELLOW}" "${FMT_BOLD}" "${FMT_RESET}"
 
 # Helper function to smartly symlink files/directories
 smart_symlink() {
@@ -18,7 +18,7 @@ smart_symlink() {
     # If an app name is provided, check if it's installed (either in /Applications, or via CLI)
     if [[ -n "$app_name" ]]; then
         if [[ ! -d "/Applications/${app_name}.app" ]] && [[ ! -d "${HOME}/Applications/${app_name}.app" ]] && [[ ! -d "/System/Applications/${app_name}.app" ]] && ! command -v "${app_name}" &>/dev/null; then
-            printf "  %s[SKIP]%s %-15s : App not installed, skipping config.\n" "${YELLOW}" "${RESET}" "${friendly_name}"
+            printf "  %s[SKIP]%s %-15s : App not installed, skipping config.\n" "${FMT_YELLOW}" "${FMT_RESET}" "${friendly_name}"
             return
         fi
     fi
@@ -28,49 +28,49 @@ smart_symlink() {
 
     if [[ -L "$target_file" ]]; then
         if [[ "$(readlink "$target_file")" == "$source_file" ]]; then
-            printf "  %s[OK]%s   %-15s : Already perfectly symlinked.\n" "${GREEN}" "${RESET}" "${friendly_name}"
+            printf "  %s[OK]%s   %-15s : Already perfectly symlinked.\n" "${FMT_GREEN}" "${FMT_RESET}" "${friendly_name}"
             return
         else
-            printf "  %s[WARN]%s %-15s : Symlink points elsewhere. Overwriting...\n" "${YELLOW}" "${RESET}" "${friendly_name}"
+            printf "  %s[WARN]%s %-15s : Symlink points elsewhere. Overwriting...\n" "${FMT_YELLOW}" "${FMT_RESET}" "${friendly_name}"
             execute rm -f "$target_file"
         fi
     elif [[ -e "$target_file" ]]; then
-        printf "  %s[BACKUP]%s %-13s : Real file found. Backing up to .bak...\n" "${BLUE}" "${RESET}" "${friendly_name}"
+        printf "  %s[BACKUP]%s %-13s : Real file found. Backing up to .bak...\n" "${FMT_BLUE}" "${FMT_RESET}" "${friendly_name}"
         execute mv "$target_file" "${target_file}.bak"
     fi
 
     execute ln -snf "$source_file" "$target_file"
-    printf "  %s[LINKED]%s %-13s : Successfully symlinked!\n" "${GREEN}" "${RESET}" "${friendly_name}"
+    printf "  %s[LINKED]%s %-13s : Successfully symlinked!\n" "${FMT_GREEN}" "${FMT_RESET}" "${friendly_name}"
 }
 
-printf "%s%s[ CORE SHELL ]:%s\n" "${BLUE}" "${BOLD}" "${RESET}"
+printf "%s%s[ CORE SHELL ]:%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
 smart_symlink "${DOTFILES_DIR}/.zshrc" "${HOME}/.zshrc" "" "zshrc"
 smart_symlink "${DOTFILES_DIR}/.zprofile" "${HOME}/.zprofile" "" "zprofile"
 smart_symlink "${DOTFILES_DIR}/.zshenv" "${HOME}/.zshenv" "" "zshenv"
 smart_symlink "${DOTFILES_DIR}/starship.toml" "${HOME}/.config/starship.toml" "starship" "starship"
 echo ""
 
-printf "%s%s[ TERMINAL & EDITORS ]:%s\n" "${BLUE}" "${BOLD}" "${RESET}"
+printf "%s%s[ TERMINAL & EDITORS ]:%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
 smart_symlink "${DOTFILES_DIR}/ghostty/config" "${HOME}/Library/Application Support/com.mitchellh.ghostty/config" "Ghostty" "Ghostty"
-printf "  %s?%s VS Code has native 'Settings Sync'. Symlink local configs anyway? [y/N]: " "${YELLOW}" "${RESET}"
+printf "  %s?%s VS Code has native 'Settings Sync'. Symlink local configs anyway? [y/N]: " "${FMT_YELLOW}" "${FMT_RESET}"
 read -r vscode_response
 if [[ "$vscode_response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     smart_symlink "${DOTFILES_DIR}/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json" "Visual Studio Code" "VS Code Settings"
     smart_symlink "${DOTFILES_DIR}/vscode/keybindings.json" "${HOME}/Library/Application Support/Code/User/keybindings.json" "Visual Studio Code" "VS Code Keys"
 else
-    printf "  %s[SKIP]%s VS Code settings skipped to avoid Settings Sync conflicts.\n" "${YELLOW}" "${RESET}"
+    printf "  %s[SKIP]%s VS Code settings skipped to avoid Settings Sync conflicts.\n" "${FMT_YELLOW}" "${FMT_RESET}"
 fi
 echo ""
 
-printf "%s%s[ SYSTEM TOOLS ]:%s\n" "${BLUE}" "${BOLD}" "${RESET}"
+printf "%s%s[ SYSTEM TOOLS ]:%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
 smart_symlink "${DOTFILES_DIR}/btop" "${HOME}/.config/btop" "btop" "btop"
 smart_symlink "${DOTFILES_DIR}/fastfetch" "${HOME}/.config/fastfetch" "fastfetch" "fastfetch"
 echo ""
 
-printf "%s%s[ CLAUDE CODE ]:%s\n" "${BLUE}" "${BOLD}" "${RESET}"
+printf "%s%s[ CLAUDE CODE ]:%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
 smart_symlink "${DOTFILES_DIR}/claude/settings.json" "${HOME}/.claude/settings.json" "claude" "Claude Settings"
 smart_symlink "${DOTFILES_DIR}/claude/claude-powerline.json" "${HOME}/.claude/claude-powerline.json" "claude" "Claude Powerline"
 echo ""
 
-printf "%s%s----------------------------------------------------------------------%s\n" "${YELLOW}" "${BOLD}" "${RESET}"
+printf "%s%s----------------------------------------------------------------------%s\n" "${FMT_YELLOW}" "${FMT_BOLD}" "${FMT_RESET}"
 echo ""

@@ -31,18 +31,18 @@ done
 export DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # --- Output Formatting ---
-export BOLD="$(tput bold 2>/dev/null || printf '')"
-export GREEN="$(tput setaf 2 2>/dev/null || printf '')"
-export BLUE="$(tput setaf 4 2>/dev/null || printf '')"
-export RED="$(tput setaf 1 2>/dev/null || printf '')"
-export YELLOW="$(tput setaf 3 2>/dev/null || printf '')"
-export RESET="$(tput sgr0 2>/dev/null || printf '')"
+export FMT_BOLD="$(tput bold 2>/dev/null || printf '')"
+export FMT_GREEN="$(tput setaf 2 2>/dev/null || printf '')"
+export FMT_BLUE="$(tput setaf 4 2>/dev/null || printf '')"
+export FMT_RED="$(tput setaf 1 2>/dev/null || printf '')"
+export FMT_YELLOW="$(tput setaf 3 2>/dev/null || printf '')"
+export FMT_RESET="$(tput sgr0 2>/dev/null || printf '')"
 
 log_info() {
     if command -v gum &>/dev/null; then
         gum style --foreground 212 "ℹ $1"
     else
-        printf "%s[INFO] %s%s\n" "${BLUE}" "$1" "${RESET}"
+        printf "%s[INFO] %s%s\n" "${FMT_BLUE}" "$1" "${FMT_RESET}"
     fi
 }
 export -f log_info
@@ -51,7 +51,7 @@ log_success() {
     if command -v gum &>/dev/null; then
         gum style --foreground 46 --bold "✔ $1"
     else
-        printf "%s[SUCCESS] %s%s\n" "${GREEN}${BOLD}" "$1" "${RESET}"
+        printf "%s[SUCCESS] %s%s\n" "${FMT_GREEN}${FMT_BOLD}" "$1" "${FMT_RESET}"
     fi
 }
 export -f log_success
@@ -60,7 +60,7 @@ log_warning() {
     if command -v gum &>/dev/null; then
         gum style --foreground 220 "⚠ $1"
     else
-        printf "%s[WARNING] %s%s\n" "${YELLOW}" "$1" "${RESET}"
+        printf "%s[WARNING] %s%s\n" "${FMT_YELLOW}" "$1" "${FMT_RESET}"
     fi
 }
 export -f log_warning
@@ -69,7 +69,7 @@ log_error() {
     if command -v gum &>/dev/null; then
         gum style --foreground 196 --bold "✖ $1" >&2
     else
-        printf "%s[ERROR] %s%s\n" "${RED}${BOLD}" "$1" "${RESET}" >&2
+        printf "%s[ERROR] %s%s\n" "${FMT_RED}${FMT_BOLD}" "$1" "${FMT_RESET}" >&2
     fi
     exit 1
 }
@@ -77,10 +77,10 @@ export -f log_error
 
 execute() {
     if [[ "$DRY_RUN" == true ]]; then
-        printf "%s[DRY-RUN]%s Would execute: %s\n" "${YELLOW}" "${RESET}" "$*" >&2
+        printf "%s[DRY-RUN]%s Would execute: %s\n" "${FMT_YELLOW}" "${FMT_RESET}" "$*" >&2
     else
         if [[ "$VERBOSE" == true ]]; then
-            printf "%s[EXEC]%s %s\n" "${BLUE}" "${RESET}" "$*" >&2
+            printf "%s[EXEC]%s %s\n" "${FMT_BLUE}" "${FMT_RESET}" "$*" >&2
         fi
         "$@"
     fi
@@ -115,9 +115,9 @@ print_banner() {
             --align center --width 50 --margin "1 2" --padding "1 2" \
             "DOTFILES PROVISIONING" "by rifk7s"
     else
-        printf "%s%s======================================================================%s\n" "${BLUE}" "${BOLD}" "${RESET}"
-        printf "%s%s                 DOTFILES PROVISIONING SCRIPT                         %s\n" "${BLUE}" "${BOLD}" "${RESET}"
-        printf "%s%s======================================================================%s\n" "${BLUE}" "${BOLD}" "${RESET}"
+        printf "%s%s======================================================================%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
+        printf "%s%s                 DOTFILES PROVISIONING SCRIPT                         %s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
+        printf "%s%s======================================================================%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
         echo ""
     fi
 }
@@ -133,9 +133,9 @@ print_step() {
             --foreground 212 --bold \
             "▶ STEP $step/$total: $title"
     else
-        printf "%s%s----------------------------------------------------------------------%s\n" "${BLUE}" "${BOLD}" "${RESET}"
-        printf "%s%s   STEP %s/%s: %s %s\n" "${BLUE}" "${BOLD}" "${step}" "${total}" "${title}" "${RESET}"
-        printf "%s%s----------------------------------------------------------------------%s\n" "${BLUE}" "${BOLD}" "${RESET}"
+        printf "%s%s----------------------------------------------------------------------%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
+        printf "%s%s   STEP %s/%s: %s %s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${step}" "${total}" "${title}" "${FMT_RESET}"
+        printf "%s%s----------------------------------------------------------------------%s\n" "${FMT_BLUE}" "${FMT_BOLD}" "${FMT_RESET}"
     fi
     echo ""
     sleep 1
