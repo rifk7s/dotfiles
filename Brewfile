@@ -12,6 +12,7 @@ brew "mysql-client" # Crucial CLI client for connecting to MySQL via terminal
 # --- CLI Tools ---
 brew "gh"    # GitHub CLI
 brew "stow"  # For symlinking dotfiles easily
+brew "gum"   # For interactive shell UI
 
 # --- Development & Engineering ---
 cask "ghostty"
