@@ -1,39 +1,12 @@
-# Clean Install Reference
+# Developer Environment Setup
 
-Apps and tools to reinstall after a clean macOS install.
+This document serves as a reference for setting up specific development environments that are not fully covered by the automated `install.sh` dotfiles orchestration.
 
-## CLI Tools (curl/standalone)
+## Laravel Setup Architecture
 
-```bash
-# Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+The local PHP development stack is composed of legitimate, lightweight native macOS applications to replace heavy virtualization:
 
-# Claude Code
-curl -fsSL https://claude.ai/install.sh | sh
-
-# uv (Python)
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Antigravity CLI
-# check: https://antigravity.dev or install docs
-
-# OpenCode
-# check: https://opencode.ai or install docs
-
-# Bun
-curl -fsSL https://bun.sh/install | bash
-```
-
-## Manual Install (links)
-
-- **Flutter**: https://docs.flutter.dev/get-started/install/macos
-- **Herd**: https://herd.laravel.com
-
-## Laravel Setup
-
-Local development stack for Laravel projects:
-
-```
+```text
 Herd ─── PHP 8.4 / 8.5
      ├── Composer
      ├── Laravel installer
@@ -42,20 +15,18 @@ Herd ─── PHP 8.4 / 8.5
      └── phpMyAdmin → http://phpmyadmin.test
 
 DBngin ─── MySQL server (local instances)
-            └── socket at /tmp/mysql_<PORT>.sock
+        └── socket at /tmp/mysql_<PORT>.sock
 
-mysql-client (brew) ─── CLI access to DBngin
+mysql-client (Brew) ─── CLI access to DBngin
 ```
 
-### Setup steps
+### Setup Steps
 
-1. **Install [Herd](https://herd.laravel.com)** - manages PHP, Composer, Laravel installer, NVM, and Nginx
-2. **Install [DBngin](https://dbngin.com)** - GUI for running local MySQL server instances
-3. **Install mysql-client** - CLI-only, no server (the server is DBngin)
-   ```bash
-   brew install mysql-client
-   ```
-4. **Add to `.zshrc`** (already in dotfiles):
+1. **Install [Herd](https://herd.laravel.com)** (via `Brewfile`) - manages PHP, Composer, Laravel installer, NVM, and Nginx.
+2. **Install [DBngin](https://dbngin.com)** (via `Brewfile`) - GUI for running local MySQL server instances.
+3. **Install mysql-client** (via `Brewfile`) - CLI-only client.
+   > **Note:** Do NOT install the full `mysql` formula (server+client) via Homebrew, as it conflicts with DBngin.
+4. **.zshrc Configuration** (already synced):
    ```bash
    export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
@@ -64,13 +35,13 @@ mysql-client (brew) ─── CLI access to DBngin
        command mysql --socket /tmp/mysql_$1.sock -u root
    }
    ```
-5. **phpMyAdmin** - add as a Herd site, accessible at `http://phpmyadmin.test`
-6. **TablePlus** - GUI database client (optional, alternative to phpMyAdmin)
+5. **phpMyAdmin** - add as a Herd site, accessible at `http://phpmyadmin.test`.
+6. **TablePlus** (via `Brewfile`) - Native GUI database client.
 
 ### Connecting to MySQL
 
 ```bash
-# Via shortcut function
+# Via shortcut function (port 3306)
 mysqls 3306
 
 # Via full command
@@ -80,110 +51,7 @@ mysql -u root -S /tmp/mysql_3306.sock
 mysql -u root -S /tmp/mysql_3306.sock mydb
 ```
 
-> **Note:** Do NOT install the full `mysql` formula (server+client), it conflicts with DBngin which already runs the server. Only the client is needed.
+---
 
-## Applications
-
-### Development
-- Android Studio
-- Antigravity
-- Antigravity IDE
-- Claude
-- Codex
-- DBngin
-- Dia
-- Figma
-- Gemini
-- Ghostty
-- Herd
-- LM Studio
-- Postman
-- RStudio
-- SF Symbols
-- TablePlus
-- Visual Studio Code
-- Xcode
-- Zed
-
-### Creative
-- Adobe After Effects 2026
-- Adobe Media Encoder 2026
-- Adobe Premiere Pro 2026
-- BorisFX
-- HandBrake
-- Maxon
-- Red Giant
-- REVisionEffects
-- Screen Studio
-- ZXP Installer
-
-### Communication
-- ChatGPT
-- Discord
-- Telegram
-- WhatsApp
-- Microsoft Teams
-- zoom.us
-
-### Productivity
-- Google Chrome
-- Keynote
-- Numbers
-- Pages
-- Microsoft Excel
-- Microsoft OneNote
-- Microsoft Outlook
-- Microsoft PowerPoint
-- Microsoft Word
-- MarkEdit
-- SlashTable
-
-### Utilities
-- AppCleaner
-- BuhoLaunchpad
-- CleanMyKeyboard
-- CleanShot X
-- Cloudflare WARP
-- coconutBattery
-- DisplayBuddy
-- Ghost Buster Pro
-- Keka
-- KnockKnock
-- LaunchOS
-- logioptionsplus
-- LuLu
-- MetalHUDmenu
-- Music Presence
-- NetSpot
-- Quick Camera
-- Raycast
-- Rectangle
-- Speedtest
-- Stats
-- Tiny Wi-Fi Analyzer
-- WhatsYourSign
-
-### Network / Virtualization
-- Cisco Packet Tracer 9.0.0
-- Parallels Desktop
-- VMware Fusion
-- WinBox
-- Wireshark
-
-### Gaming
-- Prism Launcher
-- Roblox
-
-### Other
-- Keeby
-- R
-- SongShift
-- Spotify
-
-### Installed via Brew Cask (already tracked)
-- font-fira-code-nerd-font
-- font-jetbrains-mono-nerd-font
-- keycastr
-- markedit
-- ngrok
-- rectangle
+> **Note on Application Tracking:**
+> The old giant list of manual downloads, App Store apps, and excluded/cracked apps (Adobe, Microsoft, etc.) has been migrated to `setup/manual_apps.sh`. Run `./install.sh` to trigger the Smart Auditor instead.
