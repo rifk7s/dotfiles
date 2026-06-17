@@ -52,8 +52,14 @@ echo ""
 
 printf "%s%s[ TERMINAL & EDITORS ]:%s\n" "${BLUE}" "${BOLD}" "${RESET}"
 smart_symlink "${DOTFILES_DIR}/ghostty/config" "${HOME}/Library/Application Support/com.mitchellh.ghostty/config" "Ghostty" "Ghostty"
-smart_symlink "${DOTFILES_DIR}/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json" "Visual Studio Code" "VS Code Settings"
-smart_symlink "${DOTFILES_DIR}/vscode/keybindings.json" "${HOME}/Library/Application Support/Code/User/keybindings.json" "Visual Studio Code" "VS Code Keys"
+printf "  %s?%s VS Code has native 'Settings Sync'. Symlink local configs anyway? [y/N]: " "${YELLOW}" "${RESET}"
+read -r vscode_response
+if [[ "$vscode_response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    smart_symlink "${DOTFILES_DIR}/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json" "Visual Studio Code" "VS Code Settings"
+    smart_symlink "${DOTFILES_DIR}/vscode/keybindings.json" "${HOME}/Library/Application Support/Code/User/keybindings.json" "Visual Studio Code" "VS Code Keys"
+else
+    printf "  %s[SKIP]%s VS Code settings skipped to avoid Settings Sync conflicts.\n" "${YELLOW}" "${RESET}"
+fi
 echo ""
 
 printf "%s%s[ SYSTEM TOOLS ]:%s\n" "${BLUE}" "${BOLD}" "${RESET}"
